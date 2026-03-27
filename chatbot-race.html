@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Race Discrimination Bot — Tech4Justice Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/t4j-logo-circle.png" alt="Tech4Justice Logo" class="nav-logo">
+      <span class="nav-name">Tech4Justice</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="complaints.html">Complaints</a>
+      <a href="chatbot-race.html" class="active">Race Bot</a>
+      <a href="chatbot-disability.html">Disability Bot</a>
+    </div>
+  </nav>
+
+  <!-- HERO SMALL -->
+  <section class="hero-small reveal">
+    <div class="hero-eyebrow">Interactive Legal Tool</div>
+    <h1>Race Discrimination Chatbot</h1>
+    <p>
+      Answer a series of guided questions and our tool will help you understand
+      the racial discrimination complaint process — step by step, in plain language.
+    </p>
+  </section>
+
+  <!-- CHATBOT PANEL -->
+  <div class="glass reveal">
+    <span class="section-label">Chatbot</span>
+    <h2>Start Your Guided Assessment</h2>
+    <p>
+      Students will embed the chatbot below. The tool will guide users through
+      their situation and outline possible complaint pathways.
+    </p>
+    <div class="bot-box">
+      CHATBOT EMBED HERE
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="glass reveal">
+    <span class="section-label">Useful Information</span>
+    <h2>About Racial Discrimination Complaints</h2>
+    <p>
+      Students will add supporting information here about the Racial Discrimination
+      Act 1975 and relevant complaint bodies.
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="complaints.html" class="button-ghost">View Complaints Info →</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FAB -->
+<div id="fab">
+  <a href="https://www.hearmeout.org.au/" target="_blank" rel="noopener" title="Hear Me Out">
+    <img src="assets/hearmeout-circle.png" alt="Hear Me Out">
+  </a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

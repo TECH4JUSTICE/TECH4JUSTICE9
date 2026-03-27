@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Disability Discrimination Bot — Tech4Justice Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/t4j-logo-circle.png" alt="Tech4Justice Logo" class="nav-logo">
+      <span class="nav-name">Tech4Justice</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="complaints.html">Complaints</a>
+      <a href="chatbot-race.html">Race Bot</a>
+      <a href="chatbot-disability.html" class="active">Disability Bot</a>
+    </div>
+  </nav>
+
+  <!-- HERO SMALL -->
+  <section class="hero-small reveal">
+    <div class="hero-eyebrow">Interactive Legal Tool</div>
+    <h1>Disability Discrimination Chatbot</h1>
+    <p>
+      This tool helps you identify possible disability discrimination and understand
+      your complaint pathways — guided, accessible, and free to use.
+    </p>
+  </section>
+
+  <!-- CHATBOT PANEL -->
+  <div class="glass reveal">
+    <span class="section-label">Interactive Assessment</span>
+    <h2>Start the Guided Tool</h2>
+    <p>
+      Answer a series of questions and the chatbot will guide you through
+      potential legal options under the Disability Discrimination Act 1992.
+    </p>
+    <div class="bot-wrapper">
+      <iframe
+        src="https://au.bot.joseflegal.com/m4jEEAkP/final-2024-disability-bot-copy"
+        frameborder="0"
+        title="Disability Discrimination Chatbot"
+        allow="clipboard-write"
+        style="overflow:hidden; width:100%; height:100%; min-height:520px; min-width:300px; border:none;"
+        height="100%"
+        width="100%">
+      </iframe>
+    </div>
+  </div>
+
+  <!-- INFO PANEL -->
+  <div class="glass reveal">
+    <span class="section-label">Supporting Information</span>
+    <h2>About Disability Discrimination</h2>
+    <p>
+      Students will add information about the Disability Discrimination Act 1992,
+      relevant complaint bodies, and what types of conduct may be covered.
+    </p>
+    <div style="margin-top: 20px;">
+      <a href="complaints.html" class="button-ghost">View Complaints Info →</a>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FAB -->
+<div id="fab">
+  <a href="https://www.hearmeout.org.au/" target="_blank" rel="noopener" title="Hear Me Out">
+    <img src="assets/hearmeout-circle.png" alt="Hear Me Out">
+  </a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech4Justice Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/t4j-logo-circle.png" alt="Tech4Justice Logo" class="nav-logo">
+      <span class="nav-name">Tech4Justice</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="complaints.html">Complaints</a>
+      <a href="chatbot-race.html">Race Bot</a>
+      <a href="chatbot-disability.html">Disability Bot</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero reveal">
+    <div class="hero-eyebrow">Legal Technology Tools</div>
+    <h1>
+      Helping people navigate<br>
+      <em>discrimination complaints</em>
+    </h1>
+    <p class="hero-sub">
+      The Tech4Justice Clinic provides free, accessible legal technology tools
+      to guide you through the discrimination complaint process — step by step,
+      in plain language.
+    </p>
+    <div class="hero-actions">
+      <a href="chatbot-race.html" class="button">Get Started →</a>
+      <a href="complaints.html" class="button-ghost">Learn More</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <div class="glass reveal">
+    <span class="section-label">About</span>
+    <h2>About the Clinic</h2>
+    <p>
+      The Tech4Justice Clinic is a student-led initiative developing accessible legal
+      technology to support people experiencing discrimination. Our tools are designed
+      to make the complaints process clearer, fairer, and more navigable for everyone.
+    </p>
+    <p style="margin-top: 14px;">
+      Students will add further information about the clinic here.
+    </p>
+  </div>
+
+  <!-- TOOLS GRID -->
+  <div class="grid">
+
+    <div class="card reveal">
+      <div class="card-icon">⚖️</div>
+      <h3>Racial Discrimination Chatbot</h3>
+      <p>
+        Our guided chatbot walks you through the racial discrimination complaint
+        process — helping you understand your rights and next steps.
+      </p>
+      <a href="chatbot-race.html" class="button">Open Tool →</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="card-icon">♿</div>
+      <h3>Disability Discrimination Chatbot</h3>
+      <p>
+        Answer a series of questions and let our tool help identify possible
+        disability discrimination claims and guide you through your options.
+      </p>
+      <a href="chatbot-disability.html" class="button">Open Tool →</a>
+    </div>
+
+    <div class="card reveal">
+      <div class="card-icon">📋</div>
+      <h3>Complaints Information</h3>
+      <p>
+        Not sure where to start? Learn about the complaint bodies in NSW and
+        what each one handles — explained in plain language.
+      </p>
+      <a href="complaints.html" class="button">Learn More →</a>
+    </div>
+
+  </div>
+
+</div><!-- /container -->
+
+<!-- FAB — Hear Me Out -->
+<div id="fab">
+  <a href="https://www.hearmeout.org.au/" target="_blank" rel="noopener" title="Hear Me Out">
+    <img src="assets/hearmeout-circle.png" alt="Hear Me Out">
+  </a>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+  });
+</script>
+</body>
+</html>

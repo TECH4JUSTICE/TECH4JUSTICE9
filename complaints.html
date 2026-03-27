@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Complaints Information — Tech4Justice Clinic</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="assets/t4j-logo-circle.png" alt="Tech4Justice Logo" class="nav-logo">
+      <span class="nav-name">Tech4Justice</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="complaints.html" class="active">Complaints</a>
+      <a href="chatbot-race.html">Race Bot</a>
+      <a href="chatbot-disability.html">Disability Bot</a>
+    </div>
+  </nav>
+
+  <!-- HERO SMALL -->
+  <section class="hero-small reveal">
+    <div class="hero-eyebrow">Know Your Rights</div>
+    <h1>Complaints Information</h1>
+    <p>
+      Learn about the bodies that handle discrimination complaints in NSW —
+      and understand which one is right for your situation.
+    </p>
+  </section>
+
+  <!-- INTRO PANEL -->
+  <div class="glass reveal">
+    <span class="section-label">Overview</span>
+    <h2>How the Complaints Process Works</h2>
+    <p>
+      Students will write general information about the complaints process here.
+      This section will explain the steps involved, what to expect, and how
+      Tech4Justice tools can assist you.
+    </p>
+  </div>
+
+  <!-- FAQ -->
+  <div class="glass reveal">
+    <span class="section-label">Frequently Asked Questions</span>
+    <h2>Common Questions</h2>
+
+    <div style="margin-top: 24px;">
+      <div class="faq-item">
+        <div class="faq-question">Who can make a complaint?</div>
+        <div class="faq-answer">
+          Students will insert the answer here. This section will explain
+          eligibility requirements in plain, accessible language.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">Is there a time limit?</div>
+        <div class="faq-answer">
+          Students will explain time limits here. This section will outline
+          any applicable deadlines and what happens if they are missed.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What evidence do I need?</div>
+        <div class="faq-answer">
+          Students will describe the types of evidence that may support a
+          complaint — documents, communications, witness accounts and more.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">What happens after I lodge a complaint?</div>
+        <div class="faq-answer">
+          Students will explain the process after lodging — including
+          investigation, conciliation, and possible outcomes.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FAB -->
+<div id="fab">
+  <a href="https://www.hearmeout.org.au/" target="_blank" rel="noopener" title="Hear Me Out">
+    <img src="assets/hearmeout-circle.png" alt="Hear Me Out">
+  </a>
+</div>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+  });
+</script>
+</body>
+</html>
